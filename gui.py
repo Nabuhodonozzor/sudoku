@@ -31,10 +31,11 @@ icon = pygame.image.load('res/obrazek.png')
 pygame.display.set_icon(icon)
 
 
-# Sound init (background music)
+# Sound init
 pygame.mixer.init()
 sound = pygame.mixer.Sound('res/background.wav')
-channel = sound.play()
+click_sound = pygame.mixer.Sound('res/klik.mp3')
+channel = sound.play(-1)
 sound.set_volume(0.05)
 
 
@@ -177,6 +178,8 @@ while True:
 
             # highlight rectangle positioning and chosing grid box
             if event.key == pygame.K_UP or pygame.K_DOWN or pygame.K_LEFT or pygame.K_RIGHT:
+                # click_sound.play()
+                # click_sound.set_volume(0.03)
                 if event.key == pygame.K_UP:
                     y_pos -= 1
                 if event.key == pygame.K_DOWN:
