@@ -168,7 +168,7 @@ wrong_nums = []
 while True:
     for event in pygame.event.get():
 
-        # quitting solver
+        # quitting program
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
@@ -178,8 +178,8 @@ while True:
 
             # highlight rectangle positioning and chosing grid box
             if event.key == pygame.K_UP or pygame.K_DOWN or pygame.K_LEFT or pygame.K_RIGHT:
-                # click_sound.play()
-                # click_sound.set_volume(0.03)
+                click_sound.play()
+                click_sound.set_volume(0.03)
                 if event.key == pygame.K_UP:
                     y_pos -= 1
                 if event.key == pygame.K_DOWN:
@@ -214,7 +214,7 @@ while True:
                 blank_sudoku = clear_board()
                 wrong_nums = []
 
-            # attempting solving
+            # attempting to solve
             if event.key == pygame.K_RETURN:
 
                 # fail to solve
@@ -222,7 +222,7 @@ while True:
                     # finding wrong inputs
                     wrong_nums = return_invalid(blank_sudoku)
 
-                # successfully solving and printing
+                # solving when no errors
                 else:
                     wrong_nums = []
                     sudoku_solver(blank_sudoku)
